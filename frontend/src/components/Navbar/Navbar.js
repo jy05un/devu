@@ -9,10 +9,18 @@ import RegisterButton from "./RegisterButton";
 
 function Navbar() {
   const [dropdown, setDropdown] = useState(false);
+  const [changing, setChanging] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
+  const onMouseOverOut = () => {
+    if (scrolling)
+      return;
+    setChanging(current => !current);
+  }
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" onMouseOver={onMouseOverOut} onMouseOut={onMouseOverOut} style={changing ? { backgroundColor: "#5ADAFC" } : { backgroundColor: "#0E3F7A" }}>
         <Link to="/" className="navbar-logo">
           Devu
           <Icons.FaHome />

@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
+import Board from "./components/Forum/Board/Board";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact element={<Home />}></Route>
           <Route path="/register" exact element={<Register />}></Route>
           <Route path="/login" exact element={<Login />}></Route>
+          <Route path="/board" exact element={<Board />}></Route>
         </Routes>
       </Router >
     </>
